@@ -1,0 +1,50 @@
+<form (submit)="CreateUser()" class="text-white position-absolute top-50 start-50 translate-middle border border-white rounded p-2">
+    <table>
+        <tr>
+            <th colspan="2" class="text-center">
+                <h1>Usuario</h1>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" placeholder="Nombre" class="form-control my-2">
+            </td>
+            <td>
+                <input type="text" placeholder="Apellido" class="form-control my-2">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="text" placeholder="Direccion" class="form-control my-2">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="number" placeholder="Telefono" class="form-control my-2">
+            </td>
+            <td>
+                <input type="email" placeholder="Correo" class="form-control my-2">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select id="user_type" name="user_type" class="form-select my-2">
+                    <option value="administrador">Administrador</option>
+                    <option value="cliente">Cliente</option>
+                </select>
+            </td>
+            <td>
+                <input type="email" placeholder="Nombre de usuario" class="form-control my-2">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="password" class="form-control my-2" placeholder="Contraseña">
+            </td>
+        </tr>
+        <tr>
+            <td class="text-center"><button class="btn btn-primary mt-3">Agregar</button></td>
+            <td class="text-center"><button class="btn btn-danger mt-3" routerLink="/users">Cancelar</button></td>
+        </tr>
+    </table>
+</form>

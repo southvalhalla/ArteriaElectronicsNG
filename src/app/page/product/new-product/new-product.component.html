@@ -1,0 +1,40 @@
+<form (submit)="CreateProduct()" class="text-white position-absolute top-50 start-50 translate-middle border border-white rounded p-2">
+    <table>
+        <tr>
+            <th colspan="2" class="text-center border-bottom">
+                <h1>Producto</h1>
+            </th>
+        </tr>
+        <tr>
+            <td><input type="text" class="form-control my-2" placeholder="nombre"></td>
+        </tr>
+        <tr>
+            <td><input type="text" class="form-control my-2" placeholder="marca"></td>
+        </tr>
+        <tr>
+            <td>
+                <select name="categoria" id="categoria" class="form-control my-2">
+                    <option value="" disabled selected>--seleccione categoria--</option>
+                    <option value="0">Guitarras</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="text" class="form-control my-2" placeholder="Fecha de fabricación"></td>
+        </tr>
+        <tr>
+            <td><input type="text" class="form-control my-2" placeholder="Descripción"></td>
+        </tr>
+        <tr>
+            <td><input type="text" class="form-control my-2" placeholder="Precio"></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="text-center">
+                    <button class="btn btn-primary mx-1">Agregar</button>
+                    <button class="btn btn-danger mx-1" routerLink="/products">Cancelar</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</form>

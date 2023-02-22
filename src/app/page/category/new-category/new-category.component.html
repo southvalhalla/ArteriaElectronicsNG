@@ -1,0 +1,27 @@
+<form (ngSubmit)="CreateCategory()" class="text-white position-absolute top-50 start-50 translate-middle border border-white rounded p-2">
+    <table>
+        <tr>
+            <th colspan="2" class="text-center border-bottom">
+                <h1>Categoria</h1>
+            </th>
+        </tr>
+        <tr>
+            <td class="border-bottom">
+                <input type="text" class="form-control my-2" placeholder="Categoria"  [(ngModel)]="category">
+            </td>
+        </tr>
+        <tr>
+            <td class="border-bottom">
+                <textarea class="form-control my-2" name="caracteristicas" id="caracteristicas" cols="50" rows="5" placeholder=" Caracteristicas" [(ngModel)]="description"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="mt-2 text-center">
+                    <button class="btn btn-primary mx-1">Agregar</button>
+                    <button class="btn btn-danger mx-1" routerLink="/categories">Cancelar</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</form>

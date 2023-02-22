@@ -1,0 +1,55 @@
+<form (submit)="CreateSale()" class="text-white position-absolute top-50 start-50 translate-middle border border-white rounded p-2">
+    <table>
+        <tr>
+            <th colspan="2" class="text-center">
+                <h1>Venta</h1>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <select id="user_ID" name="user_ID" class="form-select my-2">
+                    <option value="0">Julio Jaramillo | 0</option>
+                    <option value="1">Don Relleno</option>
+                </select>
+            </td>
+            
+            <td>
+                <select id="prod_ID" name="prod_ID" class="form-select my-2">
+                    <option value="" disabled selected>Producto</option>
+                    <option value="0">Guitarra</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="date" class="form-control">
+            </td>
+            <td>
+                <select id="method" name="method" class="form-select my-2">
+                    <option value="" disabled selected>Metodo de pago</option>
+                    <option value="efectivo">Efectivo</option>
+                    <option value="tarjeta">Tarjeta</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select id="status" name="status" class="form-select my-2">
+                    <option value="" disabled selected>estado del pedido</option>
+                    <option value="pendiente">Pendiente</option>
+                    <option value="listo">Listo</option>
+                    <option value="enviado">Enviado</option>
+                    <option value="terminado">Terminado</option>
+                </select>
+            </td>
+            <td>
+                <input type="number" placeholder="Precio" class="form-control my-2">
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="text-center"><button class="btn btn-primary mt-3">Agregar</button></td>
+            <td class="text-center"><button class="btn btn-danger mt-3" routerLink="/sales">Cancelar</button></td>
+        </tr>
+    </table>
+</form>

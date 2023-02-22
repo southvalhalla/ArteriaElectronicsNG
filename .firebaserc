@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "arteriadb": {
+      "hosting": {
+        "arteriaElectronics": [
+          "arteriadb"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "arteriadb"
+  }
+}
