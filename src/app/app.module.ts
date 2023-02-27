@@ -11,6 +11,8 @@ import { ProductComponent } from './page/product/product.component';
 import { SaleComponent } from './page/sale/sale.component';
 import { CategoryComponent } from './page/category/category.component';
 import { environment } from 'src/environments/environment';
+import { FormsModule } from '@angular/forms';
+
 import { DataService } from './service/data.service';
 import {HttpClientModule} from '@angular/common/http';
 import { NewUserComponent } from './page/user/new-user/new-user.component';
@@ -18,7 +20,6 @@ import { NewSaleComponent } from './page/sale/new-sale/new-sale.component';
 import { NewProductComponent } from './page/product/new-product/new-product.component';
 import { NewCategoryComponent } from './page/category/new-category/new-category.component';
 import { HomeComponent } from './page/home/home.component';
-import { FormsModule } from '@angular/forms';
 export const routes: Routes = []
 @NgModule({
   declarations: [
