@@ -2,6 +2,7 @@ import {HttpClient} from '@angular/common/http';
 
 import { Injectable } from '@angular/core';
 import { Category } from '../class/category.model';
+import { Product } from '../class/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,8 @@ import { Category } from '../class/category.model';
 export class DataService {
 
   constructor(private httpClient:HttpClient) { }
+
+// Start categories
 
   GetCategories(){
     return this.httpClient.get('https://arteriadb-default-rtdb.firebaseio.com/categories.json');
@@ -46,4 +49,31 @@ export class DataService {
     error=>console.log('ERROR: ' + error)
     );
   }
+
+  // End categories
+
+  // Start products
+
+  GetProducts () {
+    return this.httpClient.get('https://arteriadb-default-rtdb.firebaseio.com/products.json');
+  }
+
+  SendProducts (product:Product[]) {
+    this.httpClient.put('https://arteriadb-default-rtdb.firebaseio.com/products.json',product).subscribe(
+
+      response=>console.log('producto creado con: ' + response),
+
+      error=>console.log('ERROR: ' + error)
+    );
+  }
+
+  UpdateProducts () {
+
+  }
+
+  DeleteProducts () {
+
+  }
+
+  // End products
 }
