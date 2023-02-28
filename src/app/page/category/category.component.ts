@@ -23,9 +23,9 @@ export class CategoryComponent {
   ngOnInit() {
     // !load the database:
     this.categoryService.LoadCategories().subscribe(myCategories=>{
-    console.log(myCategories)
-    this.categoryArray = Object.values(myCategories);
-    this.categoryService.setCategories(this.categoryArray);
+      console.log(myCategories);
+      this.categoryArray = Object.values(myCategories);
+      this.categoryService.setCategories(this.categoryArray);
     });
     // END BLOCK //
 
