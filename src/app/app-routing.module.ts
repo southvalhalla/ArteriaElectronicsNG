@@ -19,6 +19,7 @@ const routes: Routes = [
   {path: 'categories/category/:id', component:NewCategoryComponent},
   {path: "products", component:ProductComponent},
   {path: "products/product", component:NewProductComponent},
+  {path: "products/product/:id", component:NewProductComponent},
   {path: "sales", component:SaleComponent},
   {path: "sales/sale", component:NewSaleComponent},
   {path: "**", redirectTo:'home'}

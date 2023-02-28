@@ -13,10 +13,10 @@ export class ProductComponent {
 
   ngOnInit () {
     // Load products
-    this.productService.loadProducts().subscribe(myProduct=>{
+    this.productService.LoadProducts().subscribe(myProduct=>{
       console.log(myProduct);
       this.productArray = Object.values(myProduct);
-      this.productService.setProducts(this.productArray);
+      this.productService.SetProducts(this.productArray);
     })
   }
 

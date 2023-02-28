@@ -67,8 +67,16 @@ export class DataService {
     );
   }
 
-  UpdateProducts () {
+  UpdateProducts (index:number, product:Product) {
+    let url = 'https://arteriadb-default-rtdb.firebaseio.com/categories/'+index+'/.json';
 
+    this.httpClient.put(url, product).subscribe(
+
+      response=>console.log('producto actualizado con: ' + response),
+
+      error=>console.log('ERROR: ' + error)
+      
+    );
   }
 
   DeleteProducts () {
