@@ -18,28 +18,23 @@ export class NewCategoryComponent {
   classBtn:string = "";
   contentBtn:string = "";
   
-
   constructor(private categoryService:CategoryService, private route:ActivatedRoute){}
-  
 
   ActionButton() {
     if (this.action == 0) {
-
-      
-      
 
       let myCategory = new Category(this.category,this.description);
       this.categoryService.NewCategory(myCategory);
       alert('se ha creado la categoria ' + myCategory.name);
       window.location.href = "/categories";
-    }else {
-      
-      
 
+    }else {
+    
       let myCategory = new Category(this.category,this.description);
       this.categoryService.ModificatedCategory(this.index,myCategory);
       alert('se ha actualizado la categoria ' + myCategory.name);
       window.location.href = "/categories";
+
     }
   }
 
