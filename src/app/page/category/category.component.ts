@@ -25,7 +25,7 @@ export class CategoryComponent {
     this.categoryService.LoadCategories().subscribe(myCategories=>{
       console.log(myCategories);
       this.categoryArray = Object.values(myCategories);
-      this.categoryService.setCategories(this.categoryArray);
+      this.categoryService.SetCategories(this.categoryArray);
     });
     // END BLOCK //
 

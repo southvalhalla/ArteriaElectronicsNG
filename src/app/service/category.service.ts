@@ -13,7 +13,7 @@ export class CategoryService {
 
   categoryArray:Category[] = [];
 
-  setCategories(myCategories:Category[]){
+  SetCategories(myCategories:Category[]){
     this.categoryArray=myCategories;
   }
 
