@@ -17,15 +17,15 @@
           </button></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody *ngFor="let product of productArray; let i = index">
         <tr>
-          <th scope="row">0</th>
-          <td>Guitarra</td>
-          <td>Generica</td>
-          <td>Guitarra Electrica</td>
-          <td>15/12/2022</td>
-          <td>Ejemplo</td>
-          <td>100000</td>
+          <th scope="row">{{i}}</th>
+          <td>{{product.name_prod}}</td>
+          <td>{{product.trademark}}</td>
+          <td>{{product.category}}</td>
+          <td>{{product.date}}</td>
+          <td>{{product.description_prod}}</td>
+          <td>{{product.price}}</td>
           <td colspan="2">
             <button class="btn btn-success me-2">Editar</button>
             <button class="btn btn-danger">Eliminar</button>
