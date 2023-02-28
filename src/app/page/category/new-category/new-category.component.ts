@@ -21,19 +21,6 @@ export class NewCategoryComponent {
 
   constructor(private categoryService:CategoryService, private route:ActivatedRoute){}
   
-  // CreateCategory() {
-  //   let myCategory = new Category(this.category,this.description);
-  //   this.categoryService.NewCategory(myCategory);
-  //   alert('se ha creado la categoria ' + myCategory.name);
-  //   window.location.href = "/categories";
-  // }
-
-  // UpdateMyCategory() {
-  //   let myCategory = new Category(this.category,this.description);
-  //   this.categoryService.ModificatedCategory(this.index,myCategory);
-  //   alert('se ha actualizado la categoria ' + myCategory.name);
-  //   window.location.href = "/categories";
-  // }
 
   ActionButton() {
     if (this.action == 0) {
@@ -59,12 +46,6 @@ export class NewCategoryComponent {
   
 
   ngOnInit(): void {
-    // this.categoryService.LoadCategories().subscribe(myCategories=>{
-    //   console.log(myCategories)
-    //   this.categoryArray = Object.values(myCategories);
-    //   this.categoryService.setCategories(this.categoryArray);
-
-    // });
     
     this.action=this.route.snapshot.queryParams['action'];
     if (this.action == 0) {
