@@ -31,7 +31,7 @@ export class NewUserComponent {
     private route:ActivatedRoute
   ) {}
 
-  btnAction () {
+  ActionButton () {
     if (this.action == 0) {
       let user = new User(this.name, this.lastName, this.address, this.phone, this.email, this.rol, this.username, this.password);
       this.userService.NewUser(user);
