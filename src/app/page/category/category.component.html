@@ -8,9 +8,11 @@
           <th scope="col">Categoria</th>
           <th scope="col">Caracteristicas</th>
           <th scope="col">Acciones</th>
-          <th><button class="btn btn-primary" [routerLink]="['/categories/category']" [queryParams]="{action:'0'}">
+          <th>
+            <button class="btn btn-primary" [routerLink]="['/categories/category']" [queryParams]="{action:'0'}">
             agregar
-          </button></th>
+            </button>
+          </th>
         </tr>
       </thead>
       <tbody *ngFor="let category of categoryArray; let i = index">
@@ -19,8 +21,12 @@
           <td>{{category.name}}</td>
           <td>{{category.characteristics}}</td>
           <td colspan="2">
-            <button class="btn btn-success me-2" [routerLink]="['/categories/category',i]" [queryParams]="{action:'1'}">Editar</button>
-            <button class="btn btn-danger" (click)="DeleteMyCategory(i)">Eliminar</button>
+            <button class="btn btn-success me-2" [routerLink]="['/categories/category',i]" [queryParams]="{action:'1'}">
+              Editar
+            </button>
+            <button class="btn btn-danger" (click)="DeleteMyCategory(i)">
+              Eliminar
+            </button>
           </td>
         </tr>
       </tbody>

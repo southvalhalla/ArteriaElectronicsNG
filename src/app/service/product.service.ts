@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Category } from '../class/category.model';
 import { Product } from '../class/product.model';
 import { DataService } from './data.service';
 
@@ -8,9 +7,9 @@ import { DataService } from './data.service';
 })
 export class ProductService {
 
-  constructor(private dataServise:DataService) { }
-
   productArray:Product[] = [];
+
+  constructor(private dataServise:DataService) { }
 
   SetProducts (products:Product[]) {
     this.productArray = products;
@@ -32,6 +31,7 @@ export class ProductService {
 
   ModificateProduct (index:number,product:Product) {
     let productModificated = this.productArray[index];
+
     productModificated.name_prod = product.name_prod;
     productModificated.trademark = product.trademark;
     productModificated.category = product.category;
@@ -44,9 +44,7 @@ export class ProductService {
 
   EliminateProduct (index:number) {
     this.productArray.splice(index,1);
-
     this.dataServise.DeleteProducts(index);
-
     this.dataServise.SendProducts(this.productArray);
   }
 }

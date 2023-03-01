@@ -9,29 +9,21 @@ import { CategoryService } from 'src/app/service/category.service';
 })
 export class CategoryComponent {
 
-  constructor(private categoryService:CategoryService, private route:ActivatedRoute){}
+  constructor(private categoryService:CategoryService){}
 
   DeleteMyCategory(index:number) {
-
-
     this.categoryService.EliminateCategory(index);
-    // location.reload();
-
-    console.log(index);
+    // console.log(index);
   }
 
   ngOnInit() {
-    // !load the database:
+    // load table categories
     this.categoryService.LoadCategories().subscribe(myCategories=>{
       console.log(myCategories);
       this.categoryArray = Object.values(myCategories);
       this.categoryService.SetCategories(this.categoryArray);
     });
-    // END BLOCK //
-
-    // this.index=this.route.snapshot.params['id'];
-    // let mycategory:Category=this.categoryService.UbicatedCategory(this.index);
+    ////
   }
   categoryArray:Category[] = [];
-  // index:number = 0;
 }

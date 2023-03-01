@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Category } from '../class/category.model';
-import { HttpClient } from '@angular/common/http';
 import { DataService } from './data.service';
 
 @Injectable({
@@ -8,7 +7,6 @@ import { DataService } from './data.service';
 })
 export class CategoryService {
   
-
   constructor(private dataService:DataService) { }
 
   categoryArray:Category[] = [];
@@ -22,7 +20,6 @@ export class CategoryService {
   }
 
   NewCategory(category:Category) {
-    
     this.categoryArray.push(category);
     this.dataService.SendCategory(this.categoryArray);
   }
@@ -34,6 +31,7 @@ export class CategoryService {
 
   ModificatedCategory(index:number,category:Category) {
     let categoryModificated = this.categoryArray[index];
+
     categoryModificated.name = category.name;
     categoryModificated.characteristics = category.characteristics;
 
@@ -42,11 +40,8 @@ export class CategoryService {
 
   EliminateCategory(index:number){
     this.categoryArray.splice(index,1);
-
     this.dataService.DeleteCategory(index);
-
     this.dataService.SendCategory(this.categoryArray);
   }
 
-  
 }

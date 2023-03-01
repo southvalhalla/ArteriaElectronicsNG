@@ -8,7 +8,6 @@ export class Product {
         this.description_prod = description_prod;
         this.price = price;
     }
-
     name_prod:string = "";
     trademark:string = "";
     category:string = "";

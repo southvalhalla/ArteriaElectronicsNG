@@ -11,7 +11,7 @@ export class DataService {
 
   constructor(private httpClient:HttpClient) { }
 
-// Start categories
+  // Start categories
 
   GetCategories(){
     return this.httpClient.get('https://arteriadb-default-rtdb.firebaseio.com/categories.json');
@@ -19,12 +19,8 @@ export class DataService {
 
   SendCategory(category:Category[]) {
     this.httpClient.put('https://arteriadb-default-rtdb.firebaseio.com/categories.json', category).subscribe(
-
       response=>console.log('categoria creada con: ' + response),
-
       error=>console.log('ERROR: ' + error)
-
-
     );
   }
 
@@ -32,9 +28,7 @@ export class DataService {
     let url = 'https://arteriadb-default-rtdb.firebaseio.com/categories/'+index+'/.json';
 
     this.httpClient.put(url,category).subscribe(
-
     response=>console.log('la categoria se ha actualizado: ' + response),
-
     error=>console.log('ERROR: ' + error)
     );
   }
@@ -43,9 +37,7 @@ export class DataService {
     let url = 'https://arteriadb-default-rtdb.firebaseio.com/categories/'+index+'/.json';
 
     this.httpClient.delete(url).subscribe(
-
     response=>console.log('la categoria se ha eliminado: ' + response),
-
     error=>console.log('ERROR: ' + error)
     );
   }
@@ -60,9 +52,7 @@ export class DataService {
 
   SendProducts (product:Product[]) {
     this.httpClient.put('https://arteriadb-default-rtdb.firebaseio.com/products.json',product).subscribe(
-
       response=>console.log('producto creado con: ' + response),
-
       error=>console.log('ERROR: ' + error)
     );
   }
@@ -71,11 +61,8 @@ export class DataService {
     let url = 'https://arteriadb-default-rtdb.firebaseio.com/products/'+index+'/.json';
 
     this.httpClient.put(url, product).subscribe(
-
       response=>console.log('producto actualizado con: ' + response),
-
       error=>console.log('ERROR: ' + error)
-      
     );
   }
 
@@ -83,12 +70,9 @@ export class DataService {
     let url = 'https://arteriadb-default-rtdb.firebaseio.com/products/'+index+'/.json';
 
     this.httpClient.delete(url).subscribe(
-
       response=>console.log('producto eliminado con: ' + response),
-
       error=>console.log('ERROR: ' + error)
-
-    )
+    );
   }
 
   // End products
