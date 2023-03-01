@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Category } from '../class/category.model';
 import { Product } from '../class/product.model';
+import { User } from '../class/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -76,4 +77,37 @@ export class DataService {
   }
 
   // End products
+
+  // Start Users
+
+  GetUsers () {
+    return this.httpClient.get('https://arteriadb-default-rtdb.firebaseio.com/users.json');
+  }
+
+  SendUsers (user:User[]) {
+    this.httpClient.put('https://arteriadb-default-rtdb.firebaseio.com/users.json',user).subscribe(
+      response=>console.log('usuario creado con: ' + response),
+      error=>console.log('ERROR: ' + error)
+    );
+  }
+
+  UpdateUser (index:number, user:User) {
+    let url = 'https://arteriadb-default-rtdb.firebaseio.com/users/'+index+'/.json';
+
+    this.httpClient.put(url,user).subscribe(
+      response=>console.log('usuario actualizado con: ' + response),
+      error=>console.log('ERROR: ' + error)
+    );
+  }
+
+  DeleteUser (index:number) {
+    let url = 'https://arteriadb-default-rtdb.firebaseio.com/users/'+index+'/.json';
+
+    this.httpClient.delete(url).subscribe(
+      response=>console.log('usuario eliminado con: ' + response),
+      error=>console.log('ERROR: ' + error)
+    );
+  }
+
+  // End USers
 }
