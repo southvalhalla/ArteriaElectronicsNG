@@ -11,6 +11,12 @@ export class ProductComponent {
   
   constructor (private productService:ProductService) {}
 
+  DeleteProduct (index:number) {
+
+    this.productService.EliminateProduct(index)
+
+  }
+
   ngOnInit () {
     // Load products
     this.productService.LoadProducts().subscribe(myProduct=>{

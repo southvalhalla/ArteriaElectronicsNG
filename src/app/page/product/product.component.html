@@ -28,7 +28,7 @@
           <td>{{product.price}}</td>
           <td colspan="2">
             <button class="btn btn-success me-2" [routerLink]="['/products/product',i]" [queryParams]="{action:'1'}">Editar</button>
-            <button class="btn btn-danger">Eliminar</button>
+            <button class="btn btn-danger" (click)="DeleteProduct(i)">Eliminar</button>
           </td>
         </tr>
       </tbody>

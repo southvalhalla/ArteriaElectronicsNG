@@ -68,7 +68,7 @@ export class DataService {
   }
 
   UpdateProducts (index:number, product:Product) {
-    let url = 'https://arteriadb-default-rtdb.firebaseio.com/categories/'+index+'/.json';
+    let url = 'https://arteriadb-default-rtdb.firebaseio.com/products/'+index+'/.json';
 
     this.httpClient.put(url, product).subscribe(
 
@@ -79,8 +79,16 @@ export class DataService {
     );
   }
 
-  DeleteProducts () {
+  DeleteProducts (index:number) {
+    let url = 'https://arteriadb-default-rtdb.firebaseio.com/products/'+index+'/.json';
 
+    this.httpClient.delete(url).subscribe(
+
+      response=>console.log('producto eliminado con: ' + response),
+
+      error=>console.log('ERROR: ' + error)
+
+    )
   }
 
   // End products

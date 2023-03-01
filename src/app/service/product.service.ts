@@ -41,4 +41,12 @@ export class ProductService {
 
     this.dataServise.UpdateProducts(index,product);
   }
+
+  EliminateProduct (index:number) {
+    this.productArray.splice(index,1);
+
+    this.dataServise.DeleteProducts(index);
+
+    this.dataServise.SendProducts(this.productArray);
+  }
 }
